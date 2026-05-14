@@ -15,11 +15,6 @@ It is designed for people who want a quick way to clean folders such as Download
 - Windows notification after automatic runs
 - Built only with the Python standard library
 
-## Project files
-
-- [OrganEyes.py](/C:/Users/igfor/Documents/Codex/2026-05-13/hola-fijate-si-hay-un-archivo/OrganEyes.py): source code for the distributable app
-- [dist/OrganEyes.exe](/C:/Users/igfor/Documents/Codex/2026-05-13/hola-fijate-si-hay-un-archivo/dist/OrganEyes.exe): compiled Windows executable
-- [Manual - OrganEyes.md](/C:/Users/igfor/Documents/Codex/2026-05-13/hola-fijate-si-hay-un-archivo/Manual%20-%20OrganEyes.md): end-user usage guide
 
 ## How it organizes files
 
