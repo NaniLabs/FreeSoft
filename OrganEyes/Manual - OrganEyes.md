@@ -1,104 +1,132 @@
-# Manual rapido - OrganEyes
+# Manual rápido - OrganEyes
 
-## Como abrir la aplicacion
+## Cómo abrir la aplicación
 
 Haz doble clic en `OrganEyes.exe`.
 
-Si quieres ejecutar el codigo fuente directamente:
+Si deseas ejecutar el código fuente directamente:
 
 ```powershell
 python .\OrganEyes.py
 ```
 
+---
+
 ## Modo manual
 
-1. Abre la aplicacion.
-2. Deja marcado `Manual con selector`.
+1. Abre la aplicación.
+2. Selecciona `Manual con selector`.
 3. Pulsa `Elegir carpeta`.
-4. Elige la carpeta que quieras organizar.
+4. Selecciona la carpeta que deseas organizar.
 5. Pulsa `Organizar ahora`.
 
-Ese modo ordena una sola vez y no deja nada activo en segundo plano.
+Este modo ejecuta una única organización y no deja procesos activos en segundo plano.
 
-## Modo automatico
+---
 
-1. Abre la aplicacion.
-2. Marca `Automatico al iniciar Windows`.
-3. Pulsa `Agregar carpeta automatica`.
-4. Elige una o varias carpetas que quieras organizar automaticamente.
+## Modo automático
+
+1. Abre la aplicación.
+2. Selecciona `Automático al iniciar Windows`.
+3. Pulsa `Agregar carpeta automática`.
+4. Elige una o varias carpetas para organizar automáticamente.
 5. Pulsa `Guardar y activar`.
 
-Desde ese momento, al iniciar Windows, OrganEyes revisa esas carpetas, organiza los archivos y se cierra solo.
+A partir de ese momento, OrganEyes revisará las carpetas configuradas cada vez que Windows inicie y se cerrará automáticamente al finalizar.
 
-## Como desactivar el automatico normalmente
+---
 
-1. Abre la aplicacion.
-2. Entra en `Automatico al iniciar Windows`.
-3. Pulsa `Desactivar inicio automatico`.
+## Cómo desactivar el modo automático
 
-Con eso deja de ejecutarse al prender la PC.
+1. Abre la aplicación.
+2. Ingresa en `Automático al iniciar Windows`.
+3. Pulsa `Desactivar inicio automático`.
+
+La aplicación dejará de ejecutarse durante el arranque del sistema.
+
+---
 
 ## Salida de emergencia
 
-Si algo sale mal al iniciar Windows:
+Si surge algún problema durante el inicio automático:
 
 1. Enciende la PC.
-2. Cuando estes entrando al escritorio, manten presionada la tecla `Shift`.
-3. Sostenla unos segundos.
+2. Mientras se carga el escritorio de Windows, mantén presionada la tecla `Shift`.
+3. Sostén la tecla durante unos segundos.
 
-Si OrganEyes arranca en modo automatico mientras `Shift` esta presionada, cancela ese inicio automatico y no organiza nada en esa sesion.
+Si OrganEyes detecta la tecla `Shift`, cancelará esa ejecución automática y no realizará ninguna modificación durante esa sesión.
 
-Eso no lo desactiva para siempre.
-Solo lo salta una vez para que puedas entrar y corregir la configuracion.
+Esto no desactiva la función permanentemente; únicamente omite una ejecución para permitir revisar la configuración.
 
-## Como desactivarlo a mano si no puedes abrir la app
+---
 
-Si necesitas apagarlo manualmente, borra este archivo:
+## Desactivación manual
 
-`%APPDATA%\Microsoft\Windows\Start Menu\Programs\Startup\OrganEyes.bat`
+Si no puedes abrir la aplicación, elimina el siguiente archivo:
 
-Ruta habitual:
-
-`C:\Users\TU_USUARIO\AppData\Roaming\Microsoft\Windows\Start Menu\Programs\Startup\OrganEyes.bat`
-
-## Donde guarda la configuracion
-
-La lista de carpetas automaticas se guarda en:
-
-`%APPDATA%\OrganEyes\config.json`
+```text
+%APPDATA%\Microsoft\Windows\Start Menu\Programs\Startup\OrganEyes.bat
+```
 
 Ruta habitual:
 
-`C:\Users\TU_USUARIO\AppData\Roaming\OrganEyes\config.json`
+```text
+C:\Users\TU_USUARIO\AppData\Roaming\Microsoft\Windows\Start Menu\Programs\Startup\OrganEyes.bat
+```
 
-Si quieres resetear todo, puedes borrar:
+---
 
-1. El `.bat` de inicio automatico.
-2. El archivo `config.json`.
+## Ubicación de la configuración
 
-## Parametros faciles de modificar en el codigo
+Las carpetas configuradas para organización automática se almacenan en:
 
-En [OrganEyes.py](/C:/Users/igfor/Documents/Codex/2026-05-13/hola-fijate-si-hay-un-archivo/OrganEyes.py) puedes ajustar:
+```text
+%APPDATA%\OrganEyes\config.json
+```
 
-- `MINIMO_PARA_CARPETA_PROPIA = 2`
-- `MAXIMO_CARPETAS_PRINCIPALES = 8`
-- `NOMBRE_CARPETA_VARIOS = "Varios"`
-- `NOMBRE_CARPETA_SIN_EXTENSION = "Sin extension"`
-- `VENTANA_CANCELACION_SEGUNDOS = 5`
+Ruta habitual:
 
-### Que hace cada una
+```text
+C:\Users\TU_USUARIO\AppData\Roaming\OrganEyes\config.json
+```
 
-`MINIMO_PARA_CARPETA_PROPIA`
-Cantidad minima de archivos de una extension para merecer una carpeta propia.
+Para restablecer completamente la configuración:
 
-`MAXIMO_CARPETAS_PRINCIPALES`
-Limita cuantas carpetas por extension puede crear como maximo.
+1. Elimina `OrganEyes.bat`.
+2. Elimina `config.json`.
 
-`NOMBRE_CARPETA_VARIOS`
-Nombre de la carpeta donde se guardan tipos poco frecuentes.
+---
 
-`NOMBRE_CARPETA_SIN_EXTENSION`
-Nombre de la carpeta para archivos sin extension.
+## Parámetros configurables
 
-`VENTANA_CANCELACION_SEGUNDOS`
-Tiempo disponible para cancelar el modo automatico manteniendo `Shift`.
+Dentro de `OrganEyes.py` pueden modificarse los siguientes parámetros:
+
+```python
+MINIMO_PARA_CARPETA_PROPIA = 2
+MAXIMO_CARPETAS_PRINCIPALES = 8
+NOMBRE_CARPETA_VARIOS = "Varios"
+NOMBRE_CARPETA_SIN_EXTENSION = "Sin extension"
+VENTANA_CANCELACION_SEGUNDOS = 5
+```
+
+### Descripción
+
+**MINIMO_PARA_CARPETA_PROPIA**
+
+Cantidad mínima de archivos necesarios para crear una carpeta específica para una extensión.
+
+**MAXIMO_CARPETAS_PRINCIPALES**
+
+Cantidad máxima de carpetas por extensión que pueden generarse.
+
+**NOMBRE_CARPETA_VARIOS**
+
+Nombre utilizado para agrupar extensiones poco frecuentes.
+
+**NOMBRE_CARPETA_SIN_EXTENSION**
+
+Nombre utilizado para agrupar archivos sin extensión.
+
+**VENTANA_CANCELACION_SEGUNDOS**
+
+Tiempo disponible para cancelar una ejecución automática manteniendo presionada la tecla `Shift`.
