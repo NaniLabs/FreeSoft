@@ -14,7 +14,7 @@ This public version was prepared as a clean and customizable foundation for futu
 
 ## Screenshot
 
-![Main Interface](Screenshots/main-ui.png)
+![Main Interface](screenshots/main-ui.png)
 
 ---
 
