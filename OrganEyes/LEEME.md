@@ -1,8 +1,10 @@
 # OrganEyes
 
-OrganEyes es una aplicación liviana para Windows que organiza archivos según sus extensiones más comunes.
+OrganEyes es una aplicación ligera para Windows que organiza archivos automáticamente según sus extensiones y tipos más comunes.
 
-Está diseñada para personas que quieren limpiar rápidamente carpetas como Descargas, Documentos, Música o cualquier directorio personalizado sin instalar dependencias adicionales.
+Está diseñada para ayudar a mantener ordenadas carpetas como Descargas, Documentos, Música o cualquier directorio personalizado sin necesidad de instalar dependencias adicionales.
+
+## Captura de pantalla
 
 ![Interfaz principal](Screenshots/app-main.png)
 
@@ -28,7 +30,7 @@ Está diseñada para personas que quieren limpiar rápidamente carpetas como Des
 
 OrganEyes también puede ejecutarse automáticamente al iniciar Windows.
 
-El usuario elige manualmente qué carpetas deben organizarse automáticamente.
+El usuario selecciona manualmente qué carpetas desea organizar de forma automática.
 
 ![Modo automático](Screenshots/auto-mode.png)
 
@@ -36,29 +38,31 @@ El usuario elige manualmente qué carpetas deben organizarse automáticamente.
 
 ## Características
 
-- Modo manual con selector de carpetas
-- Modo automático al iniciar Windows
-- Agrupación inteligente por extensiones comunes
-- Extensiones poco frecuentes agrupadas en `Varios`
-- Archivos sin extensión agrupados en `Sin extensión`
-- Opción de emergencia para omitir el modo automático manteniendo `Shift` durante el inicio
-- Notificación de Windows después de ejecuciones automáticas
-- Manejo seguro de archivos duplicados
-- Construido únicamente con la librería estándar de Python
+* Organización manual mediante selector de carpetas
+* Ejecución automática al iniciar Windows
+* Agrupación inteligente por extensiones comunes
+* Extensiones poco frecuentes agrupadas en `Varios`
+* Archivos sin extensión agrupados en `Sin extensión`
+* Opción de emergencia para omitir la ejecución automática manteniendo `Shift` durante el inicio
+* Notificaciones de Windows tras ejecuciones automáticas
+* Manejo seguro de archivos duplicados
+* Desarrollado únicamente con la biblioteca estándar de Python
 
 ---
 
-## Cómo organiza los archivos
+## Cómo funciona
 
 1. Analiza únicamente el nivel principal de la carpeta seleccionada.
-2. Cuenta las extensiones más comunes.
-3. Crea carpetas dedicadas solo para las extensiones más repetidas.
-4. Las extensiones menos comunes se agrupan en `Varios`.
-5. Los archivos sin extensión se agrupan en `Sin extensión`.
-6. Los conflictos de nombres se resuelven de forma segura usando:
-   - `archivo (1).ext`
-   - `archivo (2).ext`
-   - etc.
+2. Identifica las extensiones más frecuentes.
+3. Crea carpetas específicas para los tipos de archivo predominantes.
+4. Agrupa las extensiones menos frecuentes en `Varios`.
+5. Agrupa los archivos sin extensión en `Sin extensión`.
+6. Resuelve conflictos de nombres de forma segura utilizando sufijos incrementales.
+
+Ejemplos:
+
+* `archivo (1).ext`
+* `archivo (2).ext`
 
 ---
 
@@ -66,10 +70,10 @@ El usuario elige manualmente qué carpetas deben organizarse automáticamente.
 
 ### Requisitos
 
-- Windows
-- Python 3.12 o superior recomendado
+* Windows
+* Python 3.12 o superior recomendado
 
-### Ejecutar
+### Ejecución
 
 ```powershell
 python .\OrganEyes.py
@@ -77,20 +81,20 @@ python .\OrganEyes.py
 
 ---
 
-## Compilar el ejecutable
+## Generar el ejecutable
 
-OrganEyes utiliza únicamente la librería estándar de Python.
+OrganEyes utiliza exclusivamente la biblioteca estándar de Python.
 
-Para volver a generar el `.exe`, instala PyInstaller y ejecuta:
+Para generar nuevamente el ejecutable:
 
 ```powershell
 python -m pip install pyinstaller
 python -m PyInstaller --onefile --windowed --name OrganEyes .\OrganEyes.py
 ```
 
-El ejecutable generado aparecerá en:
+El archivo generado se encontrará en:
 
-```txt
+```text
 dist\
 ```
 
@@ -100,34 +104,34 @@ dist\
 
 El modo automático no selecciona carpetas por sí solo.
 
-El usuario debe elegir explícitamente qué carpetas serán organizadas automáticamente.
+El usuario debe configurar explícitamente qué ubicaciones serán organizadas automáticamente.
 
-Si no hay carpetas configuradas, OrganEyes se cerrará de forma segura sin modificar nada y mostrará una notificación.
-
----
-
-## Notas de seguridad
-
-- OrganEyes no analiza subcarpetas
-- OrganEyes no sobrescribe archivos con el mismo nombre
-- El modo automático puede omitirse durante un inicio manteniendo `Shift` mientras Windows carga el escritorio
+Si no existen carpetas configuradas, la aplicación finalizará sin realizar cambios y mostrará una notificación informativa.
 
 ---
 
-## Descarga
+## Seguridad
 
-La última versión ejecutable está disponible en la sección Releases del repositorio.
+* No analiza subcarpetas
+* No sobrescribe archivos existentes
+* El modo automático puede omitirse manteniendo `Shift` durante el inicio de Windows
+
+---
+
+## Descargas
+
+La última versión ejecutable está disponible en la sección Releases.
 
 ---
 
 ## Notas
 
-Este repositorio contiene únicamente el proyecto distribuible de la aplicación.
+Este repositorio contiene únicamente la versión distribuible del proyecto.
 
-El script personal utilizado durante el desarrollo no forma parte de este proyecto público.
+Las herramientas y scripts personales utilizados durante el desarrollo no forman parte de esta publicación.
 
 ---
 
 ## Créditos
 
-Hecho por Nani2204 & Codex.
+Desarrollado por NaniLabs.
