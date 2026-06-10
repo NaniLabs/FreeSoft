@@ -1,10 +1,10 @@
-# Quick Manual - OrganEyes
+# Quick Start Guide - OrganEyes
 
-## How to open the application
+## Launching the Application
 
 Double-click `OrganEyes.exe`.
 
-If you want to run the source code directly:
+To run the source code directly:
 
 ```powershell
 python .\OrganEyes.py
@@ -12,122 +12,121 @@ python .\OrganEyes.py
 
 ---
 
-## Manual mode
+## Manual Mode
 
 1. Open the application.
-2. Keep `Manual with folder picker` selected.
-3. Click `Choose folder`.
+2. Select `Manual with Folder Picker`.
+3. Click `Choose Folder`.
 4. Select the folder you want to organize.
-5. Click `Organize now`.
+5. Click `Organize Now`.
 
-This mode runs only once and does not stay active in the background.
+This mode performs a single organization run and does not leave any background processes running.
 
 ---
 
-## Automatic mode
+## Automatic Mode
 
 1. Open the application.
-2. Select `Automatic at Windows startup`.
-3. Click `Add automatic folder`.
-4. Choose one or more folders you want to organize automatically.
-5. Click `Save and enable`.
+2. Select `Automatic at Windows Startup`.
+3. Click `Add Automatic Folder`.
+4. Choose one or more folders to organize automatically.
+5. Click `Save and Enable`.
 
-From that moment, every time Windows starts, OrganEyes checks those folders, organizes the files and closes automatically.
+From that point on, OrganEyes will process the configured folders every time Windows starts and will close automatically after completion.
 
 ---
 
-## How to disable automatic mode normally
+## Disabling Automatic Mode
 
 1. Open the application.
-2. Go to `Automatic at Windows startup`.
-3. Click `Disable automatic startup`.
+2. Go to `Automatic at Windows Startup`.
+3. Click `Disable Automatic Startup`.
 
-After that, OrganEyes will no longer run when the PC starts.
+The application will no longer run when Windows starts.
 
 ---
 
-## Emergency startup skip
+## Emergency Bypass
 
-If something goes wrong during Windows startup:
+If something goes wrong during automatic startup:
 
-1. Turn on the PC.
+1. Turn on the computer.
 2. While Windows is loading the desktop, hold the `Shift` key.
-3. Keep holding it for a few seconds.
+3. Keep it pressed for a few seconds.
 
-If OrganEyes starts in automatic mode while `Shift` is being held, it cancels that automatic session and does not organize anything.
+If OrganEyes detects the `Shift` key, it will skip that automatic execution and perform no file operations during that session.
 
-This does not disable automatic mode permanently.
-It only skips it once so you can enter Windows safely and fix the configuration.
+This does not permanently disable the feature; it only skips a single startup.
 
 ---
 
-## How to disable it manually if the app cannot be opened
+## Manual Removal
 
-If you need to disable it manually, delete this file:
+If the application cannot be opened, remove the following file:
 
-```txt
+```text
 %APPDATA%\Microsoft\Windows\Start Menu\Programs\Startup\OrganEyes.bat
 ```
 
-Typical path:
+Typical location:
 
-```txt
-C:\Users\YOUR_USER\AppData\Roaming\Microsoft\Windows\Start Menu\Programs\Startup\OrganEyes.bat
+```text
+C:\Users\YOUR_USERNAME\AppData\Roaming\Microsoft\Windows\Start Menu\Programs\Startup\OrganEyes.bat
 ```
 
 ---
 
-## Where configuration is stored
+## Configuration Location
 
-The automatic folder list is stored in:
+Configured automatic folders are stored in:
 
-```txt
+```text
 %APPDATA%\OrganEyes\config.json
 ```
 
-Typical path:
+Typical location:
 
-```txt
-C:\Users\YOUR_USER\AppData\Roaming\OrganEyes\config.json
+```text
+C:\Users\YOUR_USERNAME\AppData\Roaming\OrganEyes\config.json
 ```
 
-If you want to reset everything, you can delete:
+To completely reset the application:
 
-1. The automatic startup `.bat`
-2. The `config.json` file
-
----
-
-## Easy-to-modify parameters in the source code
-
-Inside `OrganEyes.py` you can adjust:
-
-- `MINIMUM_FOR_OWN_FOLDER = 2`
-- `MAX_MAIN_FOLDERS = 8`
-- `MISC_FOLDER_NAME = "Varios"`
-- `NO_EXTENSION_FOLDER_NAME = "Sin extension"`
-- `CANCELLATION_WINDOW_SECONDS = 5`
+1. Delete `OrganEyes.bat`.
+2. Delete `config.json`.
 
 ---
 
-## What each parameter does
+## Configurable Parameters
 
-### `MINIMUM_FOR_OWN_FOLDER`
+The following values can be adjusted in `OrganEyes.py`:
 
-Minimum number of files required for an extension to deserve its own folder.
+```python
+MINIMO_PARA_CARPETA_PROPIA = 2
+MAXIMO_CARPETAS_PRINCIPALES = 8
+NOMBRE_CARPETA_VARIOS = "Varios"
+NOMBRE_CARPETA_SIN_EXTENSION = "Sin extension"
+VENTANA_CANCELACION_SEGUNDOS = 5
+```
 
-### `MAX_MAIN_FOLDERS`
+### Description
 
-Limits how many extension folders can be created at most.
+**MINIMO_PARA_CARPETA_PROPIA**
 
-### `MISC_FOLDER_NAME`
+Minimum number of files required before creating a dedicated folder for an extension.
 
-Name of the folder used for uncommon file types.
+**MAXIMO_CARPETAS_PRINCIPALES**
 
-### `NO_EXTENSION_FOLDER_NAME`
+Maximum number of extension-specific folders that may be created.
 
-Name of the folder used for files without extension.
+**NOMBRE_CARPETA_VARIOS**
 
-### `CANCELLATION_WINDOW_SECONDS`
+Folder name used to group uncommon file extensions.
 
-Available time window to cancel automatic mode by holding `Shift`.
+**NOMBRE_CARPETA_SIN_EXTENSION**
+
+Folder name used for files without extensions.
+
+**VENTANA_CANCELACION_SEGUNDOS**
+
+Number of seconds available to cancel automatic execution by holding the `Shift` key.
