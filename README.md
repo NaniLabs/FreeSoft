@@ -1,22 +1,23 @@
-## About
+# About
 
-I'm an Information Systems student from Argentina experimenting with software development, desktop applications, automation and local-first tools.
+I am a Systems Information student from Argentina focused on desktop software, automation, local data management, and Windows utilities.
 
-This repository is where I upload projects, ideas and software experiments I build while learning and improving over time.
+This repository contains personal projects, applications, and experiments that I use to learn, improve my skills, and explore new technologies through practical development.
 
 # FreeSoft
 
-FreeSoft is a collection of personal software projects, utilities and experimental desktop applications made by Nani.
+FreeSoft is a collection of personal projects and applications developed by NaniLabs.
 
-Most projects are focused on:
-- Automation
-- Productivity tools
-- Inventory and local business software
-- File management
-- Desktop applications
-- SQLite-based systems
-- UI and workflow experiments
-- Random ideas that somehow became usable software
+The projects are mainly focused on:
+
+* Automation
+* Productivity tools
+* Inventory and local management systems
+* File organization and administration
+* Desktop applications
+* SQLite-based solutions
+* User interface and workflow design
+* Practical software development
 
 ---
 
@@ -24,97 +25,100 @@ Most projects are focused on:
 
 ## OrganEyes
 
-Lightweight Windows utility that automatically organizes files by extension and common file types.
+A lightweight Windows utility that automatically organizes files based on their extensions and common file types.
 
 Features:
-- Manual folder organization
-- Automatic startup mode
-- Smart extension grouping
-- Safe duplicate handling
-- Local configuration storage
-- Portable executable builds
 
-Tech:
-- Python
-- SQLite
-- Windows APIs
+* Manual folder organization
+* Automatic startup mode
+* Intelligent extension grouping
+* Safe duplicate file handling
+* Local configuration
+* Portable executables
+
+Technologies:
+
+* Python
+* SQLite
+* Windows APIs
 
 ---
 
 ## Aquamarine
 
-Desktop inventory and repair management software built with Qt Widgets and SQLite.
+A desktop inventory, sales, and repair management application built with Qt Widgets and SQLite.
 
-Designed as a customizable local-first business management base.
+Designed as a local-first solution adaptable to small and medium-sized businesses.
 
 Features:
-- Product management
-- Sales tracking
-- Repair tracking
-- Supplier payment tracking
-- Hidden SQLite admin panel
-- Portable SQLite architecture
-- Offline-first workflow
 
-Tech:
-- C++
-- Qt 6 Widgets
-- SQLite
-- Visual Studio / MSVC
+* Product management
+* Sales tracking
+* Repair management
+* Supplier payment tracking
+* SQLite administration tools
+* Portable SQLite-based architecture
+* Offline workflow
+
+Technologies:
+
+* C++
+* Qt 6 Widgets
+* SQLite
+* Visual Studio / MSVC
 
 ---
 
-# Goal
+# Goals
 
-This repository works as my personal software lab.
+This repository serves as my personal software development laboratory.
 
-The main goals are:
-- Learn programming through real projects
-- Experiment with desktop software ideas
-- Build tools that are actually useful
-- Improve UI, structure and architecture over time
-- Publish projects instead of leaving them abandoned on my PC
-- Explore AI-assisted software development workflows
+Main goals:
+
+* Learn programming through real-world projects
+* Experiment with desktop software and automation
+* Build useful and reusable tools
+* Improve software architecture and maintainability
+* Publish projects and document their evolution
+* Explore modern development technologies
 
 ---
 
 # Downloads
 
-Executable builds are available in the Releases section.
+Executable releases are available in the Releases section.
 
 Some projects include:
-- portable builds
-- standalone executables
-- source code
-- documentation
-- screenshots and manuals
+
+* Portable builds
+* Standalone executables
+* Source code
+* Documentation
+* Screenshots
+* User manuals
 
 ---
 
 # Future Ideas
 
-- Smart PC automation tools
-- Local AI-assisted desktop apps
-- Inventory and management systems
-- Remote control utilities
-- Workflow automation
-- Advanced file management tools
-- UI/UX experiments
-- System utilities for Windows
-- Cross-platform desktop applications
+* Windows automation tools
+* Inventory and management systems
+* AI-assisted desktop applications
+* File organization utilities
+* Workflow automation
+* UI/UX experiments
+* Cross-platform applications
 
 ---
 
 # Notes
 
-Some projects may be experimental, unfinished or slightly cursed.
+Some projects are experimental and continue evolving as new features and improvements are added.
 
-But that's part of the fun.
-
-Most software here is built while learning, testing ideas and experimenting with new technologies, frameworks and workflows.
+Most of the software published here is part of my learning journey as a Systems Information student.
 
 ---
 
 # Credits
 
-Made by Nani220 & Codex.
+Developed by NaniLabs.
