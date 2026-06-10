@@ -1,22 +1,23 @@
-## Acerca de
+# Acerca de
 
-Soy estudiante de Sistemas en Argentina y experimento con desarrollo de software, aplicaciones de escritorio, automatización y herramientas locales.
+Soy estudiante de Sistemas en Argentina y desarrollo proyectos relacionados con software de escritorio, automatización, gestión local de datos y herramientas para Windows.
 
-Este repositorio es donde subo proyectos, ideas y experimentos de software que voy construyendo mientras aprendo y mejoro con el tiempo.
+Este repositorio reúne aplicaciones, utilidades y experimentos que utilizo para aprender, mejorar mis habilidades y explorar nuevas tecnologías mediante proyectos prácticos.
 
 # FreeSoft
 
-FreeSoft es una colección de proyectos personales, utilidades y aplicaciones experimentales hechas por Nani.
+FreeSoft es una colección de proyectos personales y aplicaciones desarrolladas por NaniLabs.
 
-La mayoría de los proyectos están enfocados en:
-- Automatización
-- Herramientas de productividad
-- Software de inventario y gestión local
-- Administración de archivos
-- Aplicaciones de escritorio
-- Sistemas basados en SQLite
-- Experimentos de interfaz y flujo de trabajo
-- Ideas aleatorias que terminaron convirtiéndose en software usable
+Los proyectos están enfocados principalmente en:
+
+* Automatización
+* Herramientas de productividad
+* Sistemas de inventario y gestión local
+* Organización y administración de archivos
+* Aplicaciones de escritorio
+* Bases de datos SQLite
+* Diseño de interfaces y experiencia de usuario
+* Desarrollo de soluciones para problemas cotidianos
 
 ---
 
@@ -24,97 +25,100 @@ La mayoría de los proyectos están enfocados en:
 
 ## OrganEyes
 
-Utilidad ligera para Windows que organiza archivos automáticamente según sus extensiones y tipos más comunes.
+Aplicación ligera para Windows que organiza archivos automáticamente según sus extensiones y tipos más comunes.
 
 Funciones:
-- Organización manual de carpetas
-- Modo automático al iniciar Windows
-- Agrupación inteligente por extensiones
-- Manejo seguro de archivos duplicados
-- Configuración local
-- Ejecutables portables
+
+* Organización manual de carpetas
+* Modo automático al iniciar Windows
+* Agrupación inteligente por extensiones
+* Manejo seguro de archivos duplicados
+* Configuración local
+* Ejecutables portables
 
 Tecnologías:
-- Python
-- SQLite
-- APIs de Windows
+
+* Python
+* SQLite
+* APIs de Windows
 
 ---
 
 ## Aquamarine
 
-Software de escritorio para gestión de inventario y reparaciones desarrollado con Qt Widgets y SQLite.
+Sistema de escritorio para gestión de inventario, ventas y reparaciones desarrollado con Qt Widgets y SQLite.
 
-Diseñado como una base local-first personalizable para negocios pequeños y medianos.
+Diseñado como una solución local-first adaptable para pequeños y medianos negocios.
 
 Funciones:
-- Gestión de productos
-- Seguimiento de ventas
-- Gestión de reparaciones
-- Seguimiento de pagos a proveedor
-- Panel oculto de administración SQLite
-- Arquitectura portable basada en SQLite
-- Flujo de trabajo offline
+
+* Gestión de productos
+* Seguimiento de ventas
+* Gestión de reparaciones
+* Seguimiento de pagos a proveedores
+* Herramientas administrativas para SQLite
+* Arquitectura portable basada en SQLite
+* Flujo de trabajo offline
 
 Tecnologías:
-- C++
-- Qt 6 Widgets
-- SQLite
-- Visual Studio / MSVC
+
+* C++
+* Qt 6 Widgets
+* SQLite
+* Visual Studio / MSVC
 
 ---
 
 # Objetivo
 
-Este repositorio funciona como mi laboratorio personal de software.
+Este repositorio funciona como un laboratorio personal de desarrollo de software.
 
-Los objetivos principales son:
-- Aprender programación mediante proyectos reales
-- Experimentar con ideas de software de escritorio
-- Crear herramientas realmente útiles
-- Mejorar interfaces, estructura y arquitectura con el tiempo
-- Publicar proyectos en lugar de dejarlos abandonados en mi PC
-- Explorar flujos de trabajo asistidos por IA para desarrollo de software
+Sus objetivos principales son:
+
+* Aprender programación mediante proyectos reales
+* Experimentar con aplicaciones de escritorio y automatización
+* Crear herramientas útiles y reutilizables
+* Mejorar diseño, arquitectura y mantenibilidad del código
+* Publicar proyectos y documentar su evolución
+* Explorar tecnologías modernas de desarrollo
 
 ---
 
 # Descargas
 
-Las compilaciones ejecutables están disponibles en la sección Releases.
+Las versiones ejecutables están disponibles en la sección Releases.
 
 Algunos proyectos incluyen:
-- builds portables
-- ejecutables standalone
-- código fuente
-- documentación
-- screenshots y manuales
+
+* Versiones portables
+* Ejecutables standalone
+* Código fuente
+* Documentación
+* Capturas de pantalla
+* Manuales de usuario
 
 ---
 
 # Ideas futuras
 
-- Herramientas inteligentes de automatización para PC
-- Apps de escritorio asistidas por IA
-- Sistemas de inventario y gestión
-- Utilidades de control remoto
-- Automatización de flujos de trabajo
-- Herramientas avanzadas de organización de archivos
-- Experimentos de UI/UX
-- Utilidades del sistema para Windows
-- Aplicaciones multiplataforma
+* Herramientas de automatización para Windows
+* Sistemas de gestión e inventario
+* Aplicaciones de escritorio asistidas por IA
+* Utilidades de organización de archivos
+* Automatización de flujos de trabajo
+* Experimentos de UI/UX
+* Aplicaciones multiplataforma
 
 ---
 
 # Notas
 
-Algunos proyectos pueden ser experimentales, incompletos o ligeramente cursed.
+Algunos proyectos son experimentales y continúan evolucionando a medida que se agregan nuevas funcionalidades y mejoras.
 
-Pero eso también es parte de la diversión.
-
-La mayoría del software aquí está hecho mientras aprendo, pruebo ideas y experimento con nuevas tecnologías, frameworks y flujos de trabajo.
+La mayoría del software publicado aquí forma parte de mi proceso de aprendizaje y desarrollo como estudiante de Sistemas.
 
 ---
 
 # Créditos
 
-Hecho por Nani220 & Codex.
+Desarrollado por NaniLabs.
