@@ -1,73 +1,77 @@
 # OrganEyes
 
-OrganEyes is a lightweight Windows desktop app that organizes files by their most common extensions.
+OrganEyes is a lightweight Windows application that automatically organizes files based on their most common extensions and file types.
 
-It is designed for people who want a quick way to clean folders such as Downloads, Documents, Music, or any custom directory without installing extra dependencies.
+It is designed to help users keep folders such as Downloads, Documents, Music, and custom directories organized without requiring additional dependencies.
 
-![Main UI](Screenshots/app-main.png)
+## Screenshot
+
+![Main Interface](Screenshots/app-main.png)
 
 ---
 
 ## Example
 
-### Before organizing
+### Before Organization
 
 ![Before](Screenshots/before.png)
 
-### Organizing process
+### Organization Process
 
 ![Organizing](Screenshots/organizing.png)
 
-### After organizing
+### After Organization
 
 ![After](Screenshots/after.png)
 
 ---
 
-## Automatic mode
+## Automatic Mode
 
 OrganEyes can also run automatically when Windows starts.
 
-The user chooses which folders should be organized automatically.
+Users manually select which folders should be organized automatically.
 
-![Automatic mode](Screenshots/auto-mode.png)
+![Automatic Mode](Screenshots/auto-mode.png)
 
 ---
 
 ## Features
 
-- Manual mode with folder picker
-- Automatic mode that runs when Windows starts
-- Smart grouping by common file extensions
-- Rare extensions grouped into `Varios`
-- Files without extension grouped into `Sin extension`
-- Emergency skip for automatic mode by holding `Shift` during startup
-- Windows notification after automatic runs
-- Safe duplicate name handling
-- Built only with the Python standard library
+* Manual organization through a folder picker
+* Automatic startup mode
+* Intelligent grouping based on common file extensions
+* Rare extensions grouped into `Misc`
+* Files without extensions grouped into `No Extension`
+* Emergency bypass by holding `Shift` during startup
+* Windows notifications after automatic runs
+* Safe duplicate file handling
+* Built entirely with Python's standard library
 
 ---
 
-## How it organizes files
+## How It Works
 
-1. It scans only the selected folder level.
-2. It counts the most common file extensions.
-3. It creates dedicated folders only for the most repeated extensions.
-4. Less common extensions go into `Varios`.
-5. Files without extension go into `Sin extension`.
-6. Name collisions are resolved safely with:
-   - `file (1).ext`
-   - `file (2).ext`
-   - etc.
+1. Analyzes only the top level of the selected folder.
+2. Identifies the most common file extensions.
+3. Creates dedicated folders for the most frequent file types.
+4. Groups less common extensions into `Misc`.
+5. Groups files without extensions into `No Extension`.
+6. Resolves filename conflicts safely using incremental suffixes.
+
+Examples:
+
+* `file (1).ext`
+* `file (2).ext`
 
 ---
 
-## Running from source
+## Running from Source
 
 ### Requirements
 
-- Windows
-- Python 3.12 or newer recommended
+* Windows
+* Python 3.12 or newer recommended
 
 ### Run
 
@@ -77,57 +81,57 @@ python .\OrganEyes.py
 
 ---
 
-## Building the executable
+## Building the Executable
 
-OrganEyes itself uses only the standard library.
+OrganEyes relies exclusively on Python's standard library.
 
-To rebuild the `.exe`, install PyInstaller and run:
+To rebuild the executable:
 
 ```powershell
 python -m pip install pyinstaller
 python -m PyInstaller --onefile --windowed --name OrganEyes .\OrganEyes.py
 ```
 
-The generated executable will appear in:
+The generated executable will be available in:
 
-```txt
+```text
 dist\
 ```
 
 ---
 
-## Automatic mode behavior
+## Automatic Mode Behavior
 
-Automatic mode does not guess folders on its own.
+Automatic mode does not select folders on its own.
 
-The user must explicitly choose which folders should be organized automatically.
+Users must explicitly configure which locations should be organized automatically.
 
-If no folders are configured, OrganEyes exits safely without changing anything and shows a notification.
-
----
-
-## Safety notes
-
-- OrganEyes does not recurse into subfolders
-- OrganEyes does not overwrite files with the same name
-- Automatic mode can be skipped for one startup session by holding `Shift` while Windows is loading the desktop
+If no folders are configured, the application exits safely without making changes and displays a notification.
 
 ---
 
-## Download
+## Security Notes
 
-The latest executable version is available in the repository Releases section.
+* Does not scan subfolders
+* Does not overwrite existing files
+* Automatic execution can be skipped by holding `Shift` during Windows startup
+
+---
+
+## Downloads
+
+The latest executable release is available in the Releases section.
 
 ---
 
 ## Notes
 
-This repository contains the distributable app project only.
+This repository contains only the distributable version of the application.
 
-The personal organizer script used during development is intentionally not part of this public project.
+Personal development scripts and internal tooling used during development are not included.
 
 ---
 
 ## Credits
 
-Made by Nani2204 & Codex.
+Developed by NaniLabs.
