@@ -14,7 +14,7 @@ Esta versión pública fue preparada como una base limpia y personalizable para 
 
 ## Captura de pantalla
 
-![Interfaz principal](Screenshots/main-ui.png)
+![Interfaz principal](screenshots/main-ui.png)
 
 ---
 
