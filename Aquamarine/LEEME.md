@@ -1,12 +1,18 @@
 # Aquamarine
 
-Aquamarine es una aplicación de escritorio desarrollada con Qt Widgets y Visual Studio para administrar inventario, ventas, pagos a proveedor y seguimiento de reparaciones en pequeños y medianos negocios.
+Aquamarine es una aplicación de escritorio desarrollada con Qt Widgets y Visual Studio para la gestión de inventario, ventas, pagos a proveedores y seguimiento de reparaciones.
 
-Esta versión pública fue preparada como una base más limpia y personalizable:
-- branding neutro y adaptable
-- código comentado a nivel funcional
-- base de datos SQLite local sin depender de servidores
-- estructura lista para personalizar y publicar en GitHub
+Fue diseñada como una solución local-first para pequeños y medianos negocios, priorizando simplicidad, portabilidad y control local de los datos.
+
+Esta versión pública fue preparada como una base limpia y personalizable para futuros desarrollos:
+
+* Branding neutro y adaptable
+* Código organizado y documentado
+* Base de datos SQLite local
+* Arquitectura portable sin dependencias de servidor
+* Estructura preparada para personalización y extensión
+
+## Captura de pantalla
 
 ![Interfaz principal](Screenshots/main-ui.png)
 
@@ -14,23 +20,24 @@ Esta versión pública fue preparada como una base más limpia y personalizable:
 
 ## Funciones principales
 
-- Alta, edición, búsqueda y eliminación de productos
-- Búsqueda por SKU o código de barras numérico
-- Registro y seguimiento de ventas
-- Seguimiento de pagos al proveedor
-- Gestión de reparaciones con datos del cliente y del trabajo
-- Panel oculto de administración SQLite
-- Persistencia local con SQLite
-- Arquitectura portable orientada a escritorio
+* Alta, edición, búsqueda y eliminación de productos
+* Búsqueda por SKU o código de barras
+* Registro y seguimiento de ventas
+* Gestión de reparaciones
+* Seguimiento de pagos a proveedores
+* Herramientas administrativas avanzadas para SQLite
+* Persistencia local mediante SQLite
+* Funcionamiento completamente offline
+* Arquitectura portable orientada a escritorio
 
 ---
 
 ## Tecnologías
 
-- C++
-- Qt 6 Widgets
-- SQLite
-- Visual Studio 2022 / MSVC
+* C++
+* Qt 6 Widgets
+* SQLite
+* Visual Studio 2022 / MSVC
 
 ---
 
@@ -57,62 +64,63 @@ aquamarine/
 
 ---
 
-## Cómo compilar
+## Compilación
 
 ### Requisitos
 
-- Windows 10 o superior
-- Visual Studio 2022 con compilador MSVC
-- Qt 6 para MSVC 2022
+* Windows 10 o superior
+* Visual Studio 2022 con MSVC
+* Qt 6 para MSVC 2022
 
 ### Pasos
 
 1. Abrir `Aquamarine.slnx`
-2. Seleccionar `Release` o `Debug`
-3. Compilar la solución desde Visual Studio o usando MSBuild
+2. Seleccionar la configuración `Release` o `Debug`
+3. Compilar la solución desde Visual Studio o mediante MSBuild
 
 ---
 
 ## Versión portable
 
-El paquete release del repositorio contiene:
+El paquete Release incluye:
 
-- el ejecutable
-- las DLL necesarias de Qt
-- plugins de plataforma
-- drivers SQLite
+* Ejecutable principal
+* DLLs requeridas por Qt
+* Plugins de plataforma
+* Drivers SQLite
 
-Para compartir la aplicación, distribuye la carpeta portable completa o el archivo ZIP disponible en Releases.
+Para distribuir la aplicación, comparte la carpeta portable completa o el archivo ZIP disponible en Releases.
 
 ---
 
 ## Base de datos SQLite
 
-La aplicación utiliza una base SQLite local.
+Aquamarine utiliza una base de datos SQLite local.
 
-Por defecto intenta guardar la base de datos dentro de la carpeta Documentos del usuario:
+Por defecto intenta almacenar la base en:
 
 ```text
 Documents/Aquamarine/aquamarine.sqlite
 ```
 
-Si la carpeta Documentos no está disponible, la aplicación utiliza la ubicación de datos de aplicación proporcionada por Windows.
+Si la carpeta Documentos no está disponible, utiliza automáticamente la ubicación de datos de aplicación proporcionada por Windows.
 
-### Qué guarda la base de datos
+### Información almacenada
 
 El archivo `.sqlite` contiene:
-- productos
-- ventas
-- reparaciones
-- estructura de tablas
 
-Si el archivo se elimina, la aplicación crea automáticamente una base vacía al iniciarse nuevamente.
+* Productos
+* Ventas
+* Reparaciones
+* Estructura de tablas
+
+Si el archivo es eliminado, la aplicación generará automáticamente una nueva base vacía durante el próximo inicio.
 
 ---
 
-## Panel admin oculto
+## Herramientas administrativas
 
-Aquamarine incluye un panel interno para ejecutar SQL manualmente.
+Aquamarine incluye un panel interno para ejecutar consultas SQL manualmente.
 
 ### Atajo
 
@@ -122,7 +130,7 @@ Ctrl + Alt + S
 
 ### Ubicación de la contraseña
 
-Definida dentro de:
+Archivo:
 
 ```text
 ProyectoAquamarine.cpp
@@ -147,11 +155,11 @@ DELETE FROM ventas WHERE id = 1;
 
 ---
 
-## Puntos comunes de personalización
+## Personalización
 
 ### Branding y logo
 
-El banner visual principal se renderiza en:
+El banner principal se genera desde:
 
 ```text
 Aquamarine/ProyectoAquamarine.cpp
@@ -163,31 +171,25 @@ Función:
 renderBrandLogo()
 ```
 
-Puedes modificar colores, textos, formas o reemplazar completamente el banner generado.
-
----
+Puede personalizarse modificando colores, textos, formas o reemplazando completamente el renderizado.
 
 ### Ruta de la base de datos
 
-Configurada dentro de:
+Configurada en:
 
 ```cpp
 loadData()
 ```
 
----
+### Contraseña administrativa
 
-### Contraseña del admin
-
-Configurada dentro de:
+Configurada en:
 
 ```cpp
 requestAdminAccess()
 ```
 
----
-
-### Fórmula de precio de referencia / marketplace
+### Fórmula de precios
 
 Ubicada en:
 
@@ -205,66 +207,74 @@ Producto::calcularPrecioML()
 
 ## Organización del código
 
-- `ProyectoAquamarine.*`
-  - renderizado de interfaz
-  - eventos de botones
-  - manejo de pantallas
-  - validaciones
-  - refresco visual
+### ProyectoAquamarine.*
 
-- `producto.*`
-  - modelo de producto
-  - lógica de precios
+* Interfaz gráfica
+* Eventos y navegación
+* Validaciones
+* Actualización visual
 
-- `venta.*`
-  - modelo de ventas
+### producto.*
 
-- `reparacion.*`
-  - modelo de reparaciones
+* Modelo de producto
+* Lógica de precios
 
-- `inventario.*`
-  - lógica principal del negocio
-  - almacenamiento en memoria
+### venta.*
 
-- `database_manager.*`
-  - capa de persistencia SQLite
+* Modelo de ventas
 
----
+### reparacion.*
 
-## Ideas para extenderlo
+* Modelo de reparaciones
 
-- usuarios y permisos
-- exportación CSV o Excel
-- branding con imágenes reales
-- archivos externos de configuración
-- filtros avanzados por cliente, fecha o estado
-- sincronización en la nube
-- soporte multi-negocio
+### inventario.*
+
+* Lógica principal del negocio
+* Gestión en memoria
+
+### database_manager.*
+
+* Persistencia SQLite
 
 ---
 
-## Notas de seguridad
+## Posibles extensiones futuras
 
-- Utiliza únicamente almacenamiento SQLite local
-- No requiere conexión a internet
-- No depende de servidores externos
-- La base de datos se recrea automáticamente si falta
+* Sistema de usuarios y permisos
+* Exportación CSV y Excel
+* Personalización avanzada de branding
+* Archivos externos de configuración
+* Filtros avanzados
+* Sincronización en la nube
+* Soporte multi-negocio
+
+---
+
+## Seguridad
+
+* Utiliza almacenamiento SQLite local
+* No requiere conexión a Internet
+* No depende de servicios externos
+* La base de datos puede recrearse automáticamente si falta
 
 ---
 
 ## Licencia y uso
 
-Este repositorio está pensado como una base personalizable.
+Este proyecto está pensado como una base personalizable para futuras implementaciones.
 
-Antes de publicarlo o desplegarlo comercialmente, revisa:
-- branding y logos
-- contraseña admin
-- fórmulas de precios
-- datos de ejemplo
-- rutas locales o información personal
+Antes de utilizarlo en entornos comerciales se recomienda revisar:
+
+* Branding y logotipos
+* Contraseña administrativa
+* Fórmulas de precios
+* Datos de ejemplo
+* Rutas locales o información sensible
 
 ---
 
 ## Créditos
 
-Hecho por Nani220 & Codex.
+Desarrollado por NaniLabs.
+
+Proyecto realizado con fines de aprendizaje, experimentación y desarrollo de aplicaciones de escritorio utilizando C++, Qt y SQLite.
